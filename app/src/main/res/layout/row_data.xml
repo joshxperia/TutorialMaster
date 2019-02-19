@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/images"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/web" />
+        <TextView
+            android:id="@+id/text1"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WEB"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel2"
+        android:layout_toRightOf="@+id/rel1"
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/database"
+            android:layout_width="150dp"
+            android:layout_height="90dp"
+            android:src="@drawable/Android"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/database"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel3"
+        android:layout_below="@+id/rel1"
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/cloud"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/Android" />
+
+        <TextView
+            android:id="@+id/text3"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/cloud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLOUD"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rel4"
+        android:layout_below="@+id/rel2"
+        android:layout_toRightOf="@+id/rel3"
+        android:layout_marginTop="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/Android" />
+
+        <TextView
+            android:id="@+id/text4"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Programming"
+            android:textSize="20sp"
+            />
+
+    </RelativeLayout>
+
+
+    <!--<RelativeLayout
+        android:id="@+id/gridviewdata"
+        android:layout_width="190dp"
+        android:layout_height="180dp"
+        android:background="#fff">
+
+        <TextView
+            android:id="@+id/fruits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Web Developement"
+            android:textSize="25dp"
+            android:textStyle="normal|italic" />
+
+
+
+        <ImageView
+            android:id="@+id/Android"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="bottom|right"
+            android:src="@drawable/Android" />
+        <TextView
+            android:id="@+id/Androiddev"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Android Developement"
+            android:textSize="25dp"
+            android:textStyle="normal|italic" />
+
+
+        <TextView
+            android:id="@+id/data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Database Developement"
+            android:textSize="25dp"
+            android:textStyle="normal|italic" />
+
+
+        <TextView
+            android:id="@+id/cloudcompute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="Cloud Computing"
+            android:textSize="25dp"
+            android:textStyle="normal|italic" />
+
+
+    </RelativeLayout>-->
+</RelativeLayout>
