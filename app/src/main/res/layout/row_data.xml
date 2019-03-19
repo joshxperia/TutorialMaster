@@ -7,11 +7,10 @@
 
     <RelativeLayout
         android:id="@+id/rel1"
-        android:layout_marginTop="20dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:gravity="center"
-        >
+        android:layout_marginTop="20dp"
+        android:gravity="center">
 
         <ImageView
             android:id="@+id/images"
@@ -19,41 +18,41 @@
             android:layout_height="90dp"
             android:contentDescription="TODO"
             android:src="@drawable/web" />
+
         <TextView
             android:id="@+id/text1"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/images"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="WEB"
-            android:textSize="20sp"
-            />
+            android:layout_below="@+id/images"
+            android:layout_marginTop="10dp"
+            android:text="Web"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
     <RelativeLayout
         android:id="@+id/rel2"
-        android:layout_toRightOf="@+id/rel1"
-        android:layout_marginTop="20dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/rel1"
         android:gravity="center">
 
         <ImageView
             android:id="@+id/database"
-            android:layout_width="150dp"
+            android:layout_width="90dp"
             android:layout_height="90dp"
-            android:src="@drawable/android"/>
+            android:src="@drawable/android" />
 
         <TextView
             android:id="@+id/text2"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/database"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/database"
+            android:layout_marginTop="10dp"
             android:text="Android"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -66,18 +65,18 @@
         android:gravity="center">
 
         <ImageView
-            android:id="@+id/cloud"
+            android:id="@+id/program"
             android:layout_width="90dp"
             android:layout_height="90dp"
-            android:src="@drawable/android" />
+            android:src="@drawable/program" />
 
         <TextView
             android:id="@+id/text3"
             android:layout_marginTop="10dp"
-            android:layout_below="@+id/cloud"
+            android:layout_below="@+id/program"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CLOUD"
+            android:text="Programming"
             android:textSize="20sp"
             />
 
@@ -85,11 +84,12 @@
 
     <RelativeLayout
         android:id="@+id/rel4"
-        android:layout_below="@+id/rel2"
-        android:layout_toRightOf="@+id/rel3"
-        android:layout_marginTop="20dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:layout_below="@+id/rel2"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/rel3"
         android:gravity="center">
 
         <ImageView
@@ -97,17 +97,16 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:contentDescription="TODO"
-            android:src="@drawable/android" />
+            android:src="@drawable/database" />
 
         <TextView
             android:id="@+id/text4"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Programming"
-            android:textSize="20sp"
-            />
+            android:layout_below="@+id/image"
+            android:layout_marginTop="10dp"
+            android:text="Databases"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
@@ -136,7 +135,7 @@
             android:layout_height="90dp"
             android:layout_marginTop="10dp"
             android:layout_gravity="bottom|right"
-            android:src="@drawable/Android" />
+            android:src="@drawable/database" />
         <TextView
             android:id="@+id/Androiddev"
             android:layout_width="wrap_content"
