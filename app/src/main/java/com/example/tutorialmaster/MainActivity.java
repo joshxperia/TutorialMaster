@@ -25,7 +25,7 @@ import android.os.Bundle;
                         e.printStackTrace();
                     }
                     finally {
-                        Intent intent=new Intent(MainActivity.this,Home.class);
+                        Intent intent=new Intent(MainActivity.this,activity_grid_item.class);
                         startActivity(intent);
                     }
                 }
