@@ -6,66 +6,42 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.VideoView;
 
-public class Home extends AppCompatActivity implements View.OnClickListener {
+public class Home extends AppCompatActivity {
 
- ProgressDialog mDialog;
- VideoView videoView;
- ImageButton btnPlayPause;
+    private VideoView videoView;
+    private ImageView btn_play_pause;
+    private TextView currentTimer;
+    private TextView durationTimer;
+    private ProgressBar currentProgress;
 
- String videoURL ="https://00e9e64bac5ccc948a596e7cdf44939ecbe4f406175bb64669-apidata.googleusercontent.com/download/storage/v1/b/webtutorials/o/Programing%2FElixir%20Tutorial.MP4?qk=AD5uMEu9HLNqY7FlExOK_sZx26CFv0fAChBMMPSYjnFGmu0FZchh8ZmALNaHm-OCorH_NAWwf6m63wNf5EBYIV6lQITM6ub8DZFYLzzS0H64e_9cjHbulbO1TOMvo0ZcpXbU04lniuH8zej0JCIzHlPJ6yj3hI5gTFaEbvIQ_9EXaPP9JntCUKvokFUlckHIiVD7ADfNNSKLpOYTd2K9R1xL8tLM6PdPjGlTjzochmyvBcN_-Txd8qyxnyLGUOSyTnBbhUm9ktMdGCabIj_XuzuLTeP3reNcRVebgtkYoBRyg0Opmuxj5JncxnXIa8O2W5T-fHZ5FUhzRXZKiXyR_cI2Iu2NtOHR96nqlG1grZP2HaeL67YkhxA_d52pI3phvhupWSrecHVeR_6YAUxBF1_PYNRz2dzEdGpVPhON2lXUgJQor_ZLrU52SZtx7iKGlF3LnNu2PBJF92r509-rVqIyXkcHX90D_DaryBcNCET1Qj9tzM-ruUz-U4vZsM5iQ6-XjMjkl54LIXDGjpvm5Hzb2yGRi_koGYnSWA-m1K2LTO1za_yzeb8ml5T-zKPC1GPOcVRwK7FJXH1d31Y_S8uEpWGpmOdJ8Z2Yu59sJDQvvNxdwYslYd16re0vCBYnNW9e2itrt8XvvzUlVR4VzK25iH3iaAufxO9yPS5vWnd6OdW9wSGZXvPodXruGWYMrsA_-VP4C_WjXnk-LADR1fwSDXWkiKNFnurR-LmBJpoT4NMRx5E3QpTJbrld-OD4HPQu792zIL1LrEdEBQ_8cH-xOWvpOBl0nSLJYlBatiZ9qb2bI828meE";
+    private Uri videoUri;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        videoView = (VideoView)findViewById(R.id.videoView);
-        btnPlayPause = (ImageButton)findViewById(R.id.btn_play_pause);
-        btnPlayPause.setOnClickListener(this);
+        videoView = (VideoView) findViewById(R.id.videoView);
+        btn_play_pause = (ImageView) findViewById(R.id.btn_play_pause);
+        currentProgress = (ProgressBar) findViewById(R.id.currentProgress);
+        //currentTimer = (TextView) findViewById(R.id.currentTimer);
+        //durationTimer = (TextView) findViewById(R.id.durationTimer);
+
+        videoUri = Uri.parse("https://00e9e64bac3d0fceb68036b9b6b3f379428aabd17b44624660-apidata.googleusercontent.com/download/storage/v1/b/webtutorials/o/Programing%2FZero%20to%20Hero%20with%20Python%20Tutorial%20FULL-%20Easy%20Learning%20python%203.4%20from%20begin%20to%20advance.webm?qk=AD5uMEstVZ8QTTplT0_u8UTaZoWauLDMvBwoWOKIT4YAGuY9-w8Dj8N7z9wK4YU0NZErst7Wi2r8QyCNnLnQTLuG-8Kum8CsUCmSgoyajZs_s1EFtSnPfdUyAFeqkVz6VANfuYd295OV78x47piqzgWIHnCmXR-AQacrQNE_7sQXSORaimKHQhvtQasoczufKyO-SBwUQkCP-Al4qatUrW9fI5WtFy7efpQtpBwVQLp3gdhvFvRbwxoDXqNQB6uKinU7w0BvEHLcwyxUMjPCjaipSOr1QrzDqqDYPAUQnL7bPnFwEn3eSEbh97rRbpLLdksIjrRjtGbJQMwaH9Z03HlCx-lr0K-mcdeRI6TjrpXcsT1GMjV81-_C6fesfv5V7Mb7p1MnhVvlFbmeGRbQBdSMh8xWjuuliZi49HmH2-lVnH8bZrgLVYYIEb9X_XM0kAYYyPO0vH2hhD603g9trEcEef3QktVz_2G3bFHsQfiSBe14YDgTe91k68qbzFuNnPnEHh4oxM48ZO1BkL00WxCqMOEovg5sj8QXE2IadAns84qLykeyO8fdMWq2LqoS8c2hdldmxI1Z92ro7tsVD_SM8AtMdLeMWZqhsIdriw3NeNW7uhxOg0WSXMpLAZg0PdOHjKvVLRhtYBzhakP8D_01Xc_f1lt2TwcyXomnoqN2KKKGBOCFXMxSCRpWJO9iAiML1qKiVbgDYhJJPHmySjqvxiQM8L5JwbvtK_gXaD8ZoKRtW9F8GlNfDyaf38RHWFDVzRQNTEJuHPvwjj8jvdKB7ynGDDp-CGi3NQ6IqXpZLKAQwPMj7eJhFGqdb6mXdrixm6OZZQYjM1ej0QITRTWdPGamY3ydPfznJ8jKcV4Zc6A6S-zZL4bDih--q4mHsL0ehtO5Z304UGTkhH158qRbXj7AwvHLqIwnJmBASn4H9WCOQK12FzE");
+        videoView.setVideoURI(videoUri);
+        videoView.start();
 
     }
 
-    @Override
-    public void onClick(View v) {
-        mDialog = new ProgressDialog(Home.this);
-        mDialog.setMessage("Please wait...");
-        mDialog.setCanceledOnTouchOutside(false);
-        mDialog.show();
 
-        try {
-            if (!videoView.isPlaying()) {
-                Uri uri = Uri.parse(videoURL);
-                videoView.setVideoURI(uri);
-                videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        btnPlayPause.setImageResource(R.drawable.ic_play);
-
-                    }
-                });
-            }
-            else{
-                videoView.pause();
-                btnPlayPause.setImageResource(R.drawable.ic_play);
-            }
-        }
-
-        catch (Exception ex){
-
-        }
-        videoView.requestFocus();
-        videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-            @Override
-            public void onPrepared(MediaPlayer mp) {
-                mDialog.dismiss();
-                mp.setLooping(true);
-                videoView.start();
-                btnPlayPause.setImageResource(R.drawable.ic_launcher_background);
-            }
-        });
     }
-}
+
