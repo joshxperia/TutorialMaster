@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "679575506578",
+    "firebase_url": "https://tutorialmaster-dae5a.firebaseio.com",
+    "project_id": "tutorialmaster-dae5a",
+    "storage_bucket": "tutorialmaster-dae5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679575506578:android:151bcc82274c5d0c",
+        "android_client_info": {
+          "package_name": "com.example.tutorialmaster"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679575506578-rd92gsf0sg73grn2r61bqgv41ub9nub9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tutorialmaster",
+            "certificate_hash": "dbd55788d3ea86232be5d315335ddb5b81ce543b"
+          }
+        },
+        {
+          "client_id": "679575506578-o8pb9rfbg81ukdeb2sp75d9oh13kcd2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABawJ3HOULRwqMnuscTzIqZDxwOdle2rc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679575506578-o8pb9rfbg81ukdeb2sp75d9oh13kcd2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
